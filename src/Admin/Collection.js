@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { BsTrashFill } from 'react-icons/bs'
-import {createCollection} from "./Adminapi.jsx"
 import { getAllCollections } from "../pages/apiHelper.js"
-import { deleteCollection } from './Adminapi.jsx'
+import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 function Collection() {
     const [collectionData, setCollectionData] = useState()
     const [collectionName, setCollectionName] = useState("")
+    const currentUser = useSelector((state) => state.user.currentUser)
+    const TOKEN = currentUser.token
+    axios.defaults.headers.common["Authorization"] = `Bearer ${TOKEN}`
+    axios.defaults.headers.common["Accept"] = "application/json"
 
-    const ClickHandler = (e) => {
+
+    const ClickHandler = async (e) => {
         e.preventDefault()
-        createCollection(collectionName)
-        preload()
+        console.log(collectionName)
+        console.log(TOKEN)
+        await axios.post("http://localhost:5000/api/v1/collection/createCollection", {name: collectionName})
         setCollectionName("")
+        preload()
+        
     }
 
-    const deleteButton = (Id) => {
-        deleteCollection(Id)
+    const deleteButton = async(Id) => {
+        await axios.delete(`http://localhost:5000/api/v1/collection/deleteCollection/${Id}`)
         preload()
     }
 
@@ -32,10 +40,10 @@ function Collection() {
 
     return (
         <div className='w-1/2  flex flex-col items-center py-4 border-r border-black'>
-        <h1 className='font-bold'>Categories</h1>
+        <h1 className='font-bold'>Collections</h1>
             <div className='flex flex-row items-center mt-8'>
-                <label>Category Name:</label>
-                <input className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block  p-2 ml-2" type="text" placeholder="Category Name.." onChange={(e)=>{
+                <label>Collection Name:</label>
+                <input className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block  p-2 ml-2" type="text" placeholder="Collection Name.." value={collectionName} onChange={(e)=>{
                     setCollectionName(e.target.value)
                 }} />
                 <button onClick={ClickHandler} className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2 text-center ml-2">Add Category</button>
