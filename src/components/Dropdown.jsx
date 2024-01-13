@@ -38,7 +38,6 @@ function Dropdown(){
          <Link to={"/profile"}><option className='hover:bg-gray-200'>Profile</option></Link>
          <Link to={"/orderHistory"}><option className='hover:bg-gray-200'>Orders</option></Link>
          {user.user?.role!=="ADMIN"? "":    <Link to={"/dashboard"}><option className='hover:bg-gray-200'>Dashboard</option></Link>}
-         {user.user?.role!=="ADMIN"? "":    <Link to={"/collection"}><option className='hover:bg-gray-200'>Collection</option></Link>}
          <Link  ><option className='hover:bg-gray-200' onClick={logoutHandler}>Logout</option></Link>
        </div> : ""}
       </div>

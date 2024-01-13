@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import Collection from '../Admin/Collection'
+import Sidebar from '../Admin/Sidebar'
 
 function Dashboard() {
     const navigate = useNavigate()
@@ -18,10 +18,24 @@ function Dashboard() {
     return (  
         <div className='flex flex-row w-screen h-full'>
             <div className='w-1/5 h-max  border-r border-black'>
-                gregegbfbfvgfgvdfgvefgvefve
+            <Sidebar/>
+            </div>
+            {/* right section */}
+            <div className="bg-gray-100">
+            {/* top section */}
+            <div>
+            {/* total orders */}
+              <div></div>
+              {/* total users */}
+              <div></div>
+              {/* total revenue */}
+              <div></div>
+            </div>
+            {/* bottom section */}
+            <div></div>
             </div>
         </div>
-    )
+      )
 }
 
 export default Dashboard

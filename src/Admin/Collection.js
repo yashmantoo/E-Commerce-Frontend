@@ -39,8 +39,8 @@ function Collection() {
     }, [collectionName])
 
     return (
-        <div className='w-1/2  flex flex-col items-center py-4 border-r border-black'>
-        <h1 className='font-bold'>Collections</h1>
+        <div className='ml-72 mt-16 flex flex-col items-center py-4 '>
+        <h1 className='text-lg font-bold'>Collections</h1>
             <div className='flex flex-row items-center mt-8'>
                 <label>Collection Name:</label>
                 <input className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block  p-2 ml-2" type="text" placeholder="Collection Name.." value={collectionName} onChange={(e)=>{

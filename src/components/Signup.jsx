@@ -29,7 +29,7 @@ function Signup(){
                     })
                 }
                 else{
-                    toast.success("Please try",{
+                    toast.success("Please try again",{
                         position: toast.POSITION.TOP_RIGHT 
                     })
                 }
@@ -103,7 +103,7 @@ function Signup(){
     
             <div className="text-white mt-6">
                 Already have an account? 
-                <a className="no-underline border-b border-blue text-white" href="../signIn">
+                <a className="no-underline border-b border-blue text-white" href="../login">
                     Log in
                 </a>.
             </div>

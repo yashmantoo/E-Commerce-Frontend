@@ -5,8 +5,11 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import Signup from './components/Signup'
 import Login from './components/Login'
-import Collection from './Admin/Collection'
+import Productpage from './Admin/Productpage'
 import Dashboard from './components/Dashboard'
+import Collectionpage from './Admin/Collectionpage'
+import Profile from './pages/Profile'
+
 
 function App() {
   return (
@@ -17,8 +20,10 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element = {<Signup/>}/>
           <Route path="/logIn" element = {<Login/>}/>
-          <Route path='dashboard' element = {<Dashboard/>}/>
-          <Route path="/collection" element = {<Collection/>}/>
+          <Route path='profile' element = {<Profile/>}/>
+          <Route path='/dashboard' element = {<Dashboard/>}/>
+          <Route path="/dashboard/collection" element = {<Collectionpage/>}/>
+          <Route path='/dashboard/products' element = {<Productpage/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>
