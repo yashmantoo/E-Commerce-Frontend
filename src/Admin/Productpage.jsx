@@ -17,10 +17,10 @@ function Productpage() {
 
     return (
         <div className='flex flex-row w-screen h-full'>
-        <div className='w-1/5 h-max  border-r border-black'>
+        <div className='w-1/4 h-max  border-r border-black'>
         <Sidebar/>
         </div>
-          <div className='w-4/5 h-100% px-2'><Products/></div>
+          <div className='w-3/4 h-100% px-2'><Products/></div>
     </div>
       )
 }

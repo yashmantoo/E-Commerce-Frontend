@@ -21,7 +21,7 @@ function Sidebar() {
         <div className='font-poppins bg-white  h-screen flex flex-col  antialiased'>
           <div className='flex flex-row items-center border-b p-2 border-gray-400'>
           <Link to={"/"}><BsHouseFill size={20}/></Link>
-          <h1 className='font-bold ml-4'>ADMIN DASHBOARD</h1>
+          <h1 className='font-semibold ml-2 text-sm sm:text-lg'>ADMIN DASHBOARD</h1>
           </div>
           <div className='flex flex-col items-center mt-4 border-b p-2 border-gray-400 '>
             <img className='w-24' src={adminImg} alt='avatar'></img>

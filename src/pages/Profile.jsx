@@ -61,12 +61,12 @@ function Profile() {
           </div>
           {/* profile section */}
           <div className='w-full flex items-center justify-center '>
-          <div className='flex flex-row w-4/5 mt-10 h-auto'>
+          <div className='flex flex-row w-5/6 mt-10 h-auto'>
             {/* left section */}
-            <div className='w-1/5 border border-gray-300 bg-[#fff] mr-2 py-4  rounded-xl'>
+            <div className='w-1/4 border border-gray-300 bg-[#fff] mr-2 py-4  rounded-xl'>
               <div className='flex flex-row items-center p-2 border-b border-gray-300 '>
-                <div className='flex items-center justify-center w-16 h-16 rounded-full bg-gray-300'><h1 className='font-bold text-xl'>{user && user.name[0].toUpperCase()}</h1></div>
-                <h3 className='ml-4'> Hello {user && user.name}</h3>
+                
+                <h3 className='md:ml-4'> Hello {user && user.name}</h3>
               </div>
                 <Link to="/orderHistory">
                 <div className='mt-4 flex items-start border-b border-gray-300 hover:bg-gray-300'>
@@ -79,7 +79,7 @@ function Profile() {
               </div>
             </div>
             {/* right section */}
-            <div className='w-4/5 flex flex-row  gap-10 bg-[#fff] border border-gray-300 rounded-xl py-4'>
+            <div className='w-3/4 flex flex-col lg:flex-row  gap-10 bg-[#fff] border border-gray-300 rounded-xl py-4'>
              <div>
              <div className='flex flex-col items-start px-4 ml-6'>
                 <label className='font-bold'>Name</label>
@@ -91,7 +91,7 @@ function Profile() {
               </div>
              </div>
              {/* change password */}
-             {flag? <div className='p-2 border border-gray-300'>
+             {flag? <div className='p-2  border border-gray-300'>
               <div className='flex flex-row items-center'>
               <label className='font-bold mr-6'>New Password:</label>
               <input className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block  p-2' type="password" onChange={(e) => {setNewPassword(e.target.value)}} />

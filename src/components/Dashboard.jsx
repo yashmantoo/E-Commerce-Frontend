@@ -17,7 +17,7 @@ function Dashboard() {
 
     return (  
         <div className='flex flex-row w-screen h-full'>
-            <div className='w-1/5 h-max  border-r border-black'>
+            <div className='w-1/4 h-max  border-r border-black'>
             <Sidebar/>
             </div>
             {/* right section */}

@@ -9,6 +9,8 @@ import Productpage from './Admin/Productpage'
 import Dashboard from './components/Dashboard'
 import Collectionpage from './Admin/Collectionpage'
 import Profile from './pages/Profile'
+import Shop from './pages/Shop'
+import Product from './pages/Product'
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path='/dashboard' element = {<Dashboard/>}/>
           <Route path="/dashboard/collection" element = {<Collectionpage/>}/>
           <Route path='/dashboard/products' element = {<Productpage/>}/>
+          <Route path='/shop' element = {<Shop/>}/>
+          <Route path='product/:id' element = {<Product/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>
