@@ -11,6 +11,7 @@ import Collectionpage from './Admin/Collectionpage'
 import Profile from './pages/Profile'
 import Shop from './pages/Shop'
 import Product from './pages/Product'
+import Cart from './pages/Cart'
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
           <Route path="/dashboard/collection" element = {<Collectionpage/>}/>
           <Route path='/dashboard/products' element = {<Productpage/>}/>
           <Route path='/shop' element = {<Shop/>}/>
-          <Route path='product/:id' element = {<Product/>}/>
+          <Route path='/product/:id' element = {<Product/>}/>
+          <Route path='/cart' element = {<Cart/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>
