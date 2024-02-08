@@ -79,7 +79,7 @@ function Cart() {
               cartList && cartList.map((product, index)=>(
                 <div key={index} className="overflow-clip p-2 flex flex-col md:flex-row items-center  justify-between  bg-white shadow-md rounded-xl mb-4">
                 <div className='flex flex-row items-center w-64'>
-                <img className="w-20 h-20 object-scale-down" alt='product' src={product && product.photos[0]?.secure_url}></img>
+                <img className="w-20 h-20 object-scale-down" alt='product' src={product.photos[0]?.secure_url}></img>
                 <h3 className="truncate block ml-2">{product.name}</h3>
                 </div>
                 {/* counter */}
@@ -89,7 +89,7 @@ function Cart() {
                     <button onClick={increase.bind(this,product._id)} className='px-2 bg-gray-200'><span className='text-2xl font-thin'>+</span></button>
                 </div>
                 <h3>₹ {product.price*product.quantity}</h3>
-                <button onClick={remove.bind(this,product._id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded" >Remove</button>
+                <button onClick={remove.bind(this, product._id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded" >Remove</button>
                 </div>
               ))
             }
@@ -101,7 +101,7 @@ function Cart() {
               <div className="flex flex-row items-center justify-between border border-grey p-2 mt-4"><h3>Price ({quantity} items)</h3> <h3>₹ {totalPrice}</h3></div>
               </div>
               <div className="flex flex-row items-center justify-between border border-grey p-2 mt-3"><h3>Delivery Charges</h3> <h3 className='text-[#22CB5C]'>FREE</h3></div>
-              <div className="flex flex-row items-center justify-between border border-grey p-2 mt-4"><h3 className="text-lg text-black font-bold">Total Amount</h3> <h3 className="text-lg text-black font-bold">{totalPrice}</h3></div>
+              <div className="flex flex-row items-center justify-between border border-grey p-2 mt-4"><h3 className="text-lg text-black font-bold">Total Amount</h3> <h3 className="text-lg text-black font-bold">₹ {totalPrice}</h3></div>
               <div onClick={redirect} className="flex justify-center  mt-4"><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">Check Out</button></div>
             </div>
           </div>

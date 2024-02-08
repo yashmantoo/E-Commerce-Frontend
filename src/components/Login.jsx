@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { login } from "../redux/apiCalls"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Login(){
     const {success} = useSelector((state) => state.user)
@@ -11,8 +13,21 @@ function Login(){
     const dispatch = useDispatch()
 
     const handleLogin = (e) => {
-        e.preventDefault()
-        login(dispatch, {email, password})
+
+        if (email && password) {
+            e.preventDefault()
+            login(dispatch, {email, password}).then(x => {
+                toast.error("Please check Your Credentials !",{
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            })
+        } 
+        else {
+            toast.error("All fields are required !",{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        
     }
     useEffect(() => {
         if(success){
@@ -54,6 +69,7 @@ function Login(){
                 </div>
             </div>
         </div>
+        <ToastContainer/>
       </section>
       )
 }

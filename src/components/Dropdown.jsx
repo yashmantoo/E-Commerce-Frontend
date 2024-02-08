@@ -36,7 +36,7 @@ function Dropdown(){
        <BiUserCircle size={22} className="mr-4 cursor-pointer" onClick={dropDownHandler}/>
        {flag? <div className='bg-white text-black p-2 rounded-xl z-10 absolute top-11 right-8'>
          <Link to={"/profile"}><option className='hover:bg-gray-200'>Profile</option></Link>
-         <Link to={"/orderHistory"}><option className='hover:bg-gray-200'>Orders</option></Link>
+         <Link to={"/orders"}><option className='hover:bg-gray-200'>Orders</option></Link>
          {user.user?.role!=="ADMIN"? "":    <Link to={"/dashboard"}><option className='hover:bg-gray-200'>Dashboard</option></Link>}
          <Link  ><option className='hover:bg-gray-200' onClick={logoutHandler}>Logout</option></Link>
        </div> : ""}

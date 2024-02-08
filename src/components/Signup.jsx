@@ -21,7 +21,7 @@ function Signup(){
                     loading: true
                 })
                 const res = await publicRequest.post("/auth/signup", {name: userDetails.name, email: userDetails.email, password: userDetails.password})
-                console.log(res)
+                console.log(res.data.success)
                 if(res.data.success===true)
                 {
                     toast.success("Account created Successfully, try login for more",{
@@ -29,7 +29,7 @@ function Signup(){
                     })
                 }
                 else{
-                    toast.success("Please try again",{
+                    toast.error("Please try again",{
                         position: toast.POSITION.TOP_RIGHT 
                     })
                 }

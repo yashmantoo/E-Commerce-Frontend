@@ -30,8 +30,9 @@ function Profile() {
     }
     const handlePasswordChange = async() => {
         if (newPassword && confirmPassword) {
+          if (newPassword === confirmPassword) {
             const res = await axios.post("http://localhost:5000/api/v1/auth/changePassword", {newPassword: newPassword, confirmPassword: confirmPassword})
-            console.log(res)
+            console.log(res.data.success)
             if(res.data.success === true)
             {
                 toast.success("Password changed successfully",{
@@ -44,6 +45,13 @@ function Profile() {
                     position: toast.POSITION.TOP_RIGHT 
                 })
             }
+          }
+          else{
+            toast.success("New Password and Confirm Password do not match",{
+              position: toast.POSITION.TOP_RIGHT 
+          })
+          }
+            
         }
         else
         {
@@ -68,7 +76,7 @@ function Profile() {
                 
                 <h3 className='md:ml-4'> Hello {user && user.name}</h3>
               </div>
-                <Link to="/orderHistory">
+                <Link to="/orders">
                 <div className='mt-4 flex items-start border-b border-gray-300 hover:bg-gray-300'>
                   <h2 className='p-2 ml-4'>Your orders</h2>
                  </div>

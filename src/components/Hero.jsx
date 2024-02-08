@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImg from "../assets/heroImg.jpg"
+import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
@@ -9,7 +10,10 @@ function Hero() {
         <div className="max-w-md">
           <h1 className="mb-5 text-4xl font-bold">For the Musician in you</h1>
           <p className="mb-5">Get the best in line Instruments of your choice at the best prices</p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to= "/shop">
+            <button  className="btn btn-primary">Get Started</button>
+          </Link>
+          
         </div>
       </div>
     </div>
