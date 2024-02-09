@@ -14,7 +14,7 @@ function Orders() {
     const [orderHistory, setOrderHistory] = useState()
 
     const preload = async () => {
-        const res = await axios.get("http://localhost:5000/api/v1/order/orderHistory", currentUser.user._id)
+        const res = await axios.get("https://ecommerce-backend-i0y1.onrender.com/api/v1/order/orderHistory", currentUser.user._id)
         console.log(res.data.orders)
         const x = res.data
         setOrderHistory(x.orders)

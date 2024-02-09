@@ -13,7 +13,7 @@ function Users() {
     const [users, setUsers] = useState()
 
     const preload = async() => {
-        const res = await axios.get("http://localhost:5000/api/v1/auth/allUsers")
+        const res = await axios.get("https://ecommerce-backend-i0y1.onrender.com/api/v1/auth/allUsers")
         const x = res.data
         setUsers(x.allUsers)
         console.log(users)

@@ -25,7 +25,7 @@ function Products() {
     }
 
     const deleteButton = async(Id) => {
-        const res = await axios.delete(`http://localhost:5000/api/v1/product/deleteProduct/${Id}`)
+        const res = await axios.delete(`https://ecommerce-backend-i0y1.onrender.com/api/v1/product/deleteProduct/${Id}`)
         console.log(res.data)
         preload()
     }
@@ -58,9 +58,6 @@ function Products() {
                         Stocks
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Category
-                    </th>
-                    <th scope="col" className="px-6 py-3">
                         Price
                     </th>
                     <th scope="col" className="px-6 py-3">
@@ -77,9 +74,6 @@ function Products() {
                     </th>
                     <td className="px-6 py-4">
                         {prod.stock}
-                    </td>
-                    <td className="px-6 py-4">
-                        Laptop
                     </td>
                     <td className="px-6 py-4">
                         ₹ {prod.price}

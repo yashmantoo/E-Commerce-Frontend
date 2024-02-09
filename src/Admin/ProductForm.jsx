@@ -43,7 +43,7 @@ function ProductForm({setFlag}) {
                 loading: true
             })
             console.log(values)
-            const res = await axios.post("http://localhost:5000/api/v1/product/addProduct", values)
+            const res = await axios.post("https://ecommerce-backend-i0y1.onrender.com/api/v1/product/addProduct", values)
             if(!res.data.success)
             {
                 setStatus({...status, error:true})

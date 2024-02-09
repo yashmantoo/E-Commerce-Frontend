@@ -35,11 +35,11 @@ function Checkout() {
 
         else
         {
-            const res = await axios.get("http://localhost:5000/api/v1/order/getRazorpayKey")
+            const res = await axios.get("https://ecommerce-backend-i0y1.onrender.com/api/v1/order/getRazorpayKey")
             const key = res.data.key
             console.log(key)
 
-            const order = await axios.post("http://localhost:5000/api/v1/order/payment", {product: state.products})
+            const order = await axios.post("https://ecommerce-backend-i0y1.onrender.com/api/v1/order/payment", {product: state.products})
             console.log(order)
 
             const options = {
@@ -60,7 +60,7 @@ function Checkout() {
                     }
                     console.log(data)
 
-                    const result = await axios.post("http://localhost:5000/api/v1/order/paymentVerification", {orderCreationId: data.orderCreationId, razorpayPaymentId: data.razorpayPaymentId, razorpayOrderId: data.razorpayOrderId, razorpaySignature: data.razorpaySignature, product: state.products, address, phoneNumber, amount: state.totalPrice})
+                    const result = await axios.post("https://ecommerce-backend-i0y1.onrender.com/api/v1/order/paymentVerification", {orderCreationId: data.orderCreationId, razorpayPaymentId: data.razorpayPaymentId, razorpayOrderId: data.razorpayOrderId, razorpaySignature: data.razorpaySignature, product: state.products, address, phoneNumber, amount: state.totalPrice})
                     console.log(result)
 
                         dispatch(clearCart())

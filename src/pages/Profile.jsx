@@ -31,7 +31,7 @@ function Profile() {
     const handlePasswordChange = async() => {
         if (newPassword && confirmPassword) {
           if (newPassword === confirmPassword) {
-            const res = await axios.post("http://localhost:5000/api/v1/auth/changePassword", {newPassword: newPassword, confirmPassword: confirmPassword})
+            const res = await axios.post("https://ecommerce-backend-i0y1.onrender.com/api/v1/auth/changePassword", {newPassword: newPassword, confirmPassword: confirmPassword})
             console.log(res.data.success)
             if(res.data.success === true)
             {
@@ -47,7 +47,7 @@ function Profile() {
             }
           }
           else{
-            toast.success("New Password and Confirm Password do not match",{
+            toast.error("New Password and Confirm Password do not match",{
               position: toast.POSITION.TOP_RIGHT 
           })
           }

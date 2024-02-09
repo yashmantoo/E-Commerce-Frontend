@@ -17,14 +17,14 @@ function Collection() {
         e.preventDefault()
         console.log(collectionName)
         console.log(TOKEN)
-        await axios.post("http://localhost:5000/api/v1/collection/createCollection", {name: collectionName})
+        await axios.post("https://ecommerce-backend-i0y1.onrender.com/api/v1/collection/createCollection", {name: collectionName})
         setCollectionName("")
         preload()
         
     }
 
     const deleteButton = async(Id) => {
-        await axios.delete(`http://localhost:5000/api/v1/collection/deleteCollection/${Id}`)
+        await axios.delete(`https://ecommerce-backend-i0y1.onrender.com/api/v1/collection/deleteCollection/${Id}`)
         preload()
     }
 
